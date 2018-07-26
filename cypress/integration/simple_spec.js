@@ -6,8 +6,4 @@ describe('Home', () => {
     it(`should fail`, () => {
         expect(true).to.be.false;
     });
-
-    it(`should navigate to edit page`, () => {
-        
-    });
 });

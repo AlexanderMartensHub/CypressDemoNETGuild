@@ -5,8 +5,8 @@
   <mat-icon color="accent">search</mat-icon>
 </mat-toolbar>
 <mat-list>
-  <a mat-list-item *ngFor="let contact of contacts | async; trackBy: trackByFn" [routerLink]="['/contact', contact.id]">
-    <img mat-list-avatar [src]="contact.image" alt="/assets/images/placeholder.png">
+  <a mat-list-item *ngFor="let contact of contacts | async; trackBy: trackByFn" [routerLink]="['/contact', contact.id]" class="contact-li">
+    <img mat-list-avatar [src]=" contact.image " alt="/assets/images/placeholder.png ">
     <h3 mat-line>{{ contact.name }}</h3>
   </a>
 </mat-list>
