@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
+import { ContactsEditorComponent } from '../contacts-editor/contacts-editor.component';
 
 @Component({
   selector: 'trm-confirm-deactivation-dialog',

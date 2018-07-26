@@ -8,13 +8,6 @@ import { CanDeactivateContactsEditorGuard } from './contacts-editor.guard';
 import { ContactsResolver } from './shared/contacts.resolver';
 
 export const APP_ROUTES = [
-    // { path: '', redirectTo: 'contacts', pathMatch: 'full' },
-    // // Wildcard
-    // // { path: '**', redirectTo: '/'},
-    // { path: 'contacts', component: ContactsListComponent },
-    // { path: 'contacts/:id', component: ContactsDetailViewComponent },
-    // { path: 'contacts/:id/edit', component: ContactsEditorComponent },
-
     {
         path: '',
         component: ContactsDashboardComponent,

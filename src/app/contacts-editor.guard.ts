@@ -2,7 +2,8 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, CanDeactivate
 import { ContactsEditorComponent } from './contacts-editor/contacts-editor.component';
 import { MatDialog } from '@angular/material';
 import { ConfirmDeactivationDialogComponent } from './confirm-deactivation-dialog/confirm-deactivation-dialog.component';
-import { Injectable } from '../../node_modules/@angular/core';
+import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 
 @Injectable()
 export class CanDeactivateContactsEditorGuard implements CanActivate, CanDeactivate<ContactsEditorComponent> {
@@ -17,7 +18,11 @@ export class CanDeactivateContactsEditorGuard implements CanActivate, CanDeactiv
         component: ContactsEditorComponent,
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
-    ) {
+    ) 
+    {
+        if(component.routeChangedBySave) {
+            return of(true);
+        }
         const ref = this.dialog.open(ConfirmDeactivationDialogComponent);
         return ref.afterClosed();
     }
